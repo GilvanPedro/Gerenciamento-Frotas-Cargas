@@ -22,7 +22,7 @@ public class Main {
         System.out.println(entregador);
 
         entregador.setDisponivel(false);
-        entregador.setQuantidadeEntregasMes(25);
+        entregador.setQuantidadeEntregasNoMes(25);
 
         System.out.println("\nApós alterações:");
         System.out.println(entregador);
@@ -63,12 +63,10 @@ public class Main {
                 9.0
         );
 
-        // Printando os carros
         System.out.println(carro1);
         System.out.println(carro2);
         System.out.println(carro3);
 
-        // Teste extra
         System.out.println("\n=== TESTE DE AUTONOMIA ===");
         double autonomia = carro1.getCombustivelAtual() * carro1.getQuilometroPorLitro();
         System.out.println("Autonomia do Civic: " + autonomia + " km");
