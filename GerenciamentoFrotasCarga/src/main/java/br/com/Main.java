@@ -1,10 +1,31 @@
 package br.com;
 
 import br.com.model.entity.Carro;
+import br.com.model.entity.Entregador;
 import br.com.model.enums.TamanhoCarro;
 
 public class Main {
     public static void main(String[] args) {
+
+        Entregador entregador = new Entregador(
+                1,
+                "João Silva",
+                "123.456.789-00",
+                "joao@email.com",
+                "11999999999",
+                2500.0,
+                false,
+                true,
+                20
+        );
+
+        System.out.println(entregador);
+
+        entregador.setDisponivel(false);
+        entregador.setQuantidadeEntregasMes(25);
+
+        System.out.println("\nApós alterações:");
+        System.out.println(entregador);
 
         Carro carro1 = new Carro(
                 1,
