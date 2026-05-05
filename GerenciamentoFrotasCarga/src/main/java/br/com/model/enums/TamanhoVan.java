@@ -14,4 +14,10 @@ public enum TamanhoVan {
     public double getCoeficienteCarga() {
         return coeficienteCarga;
     }
+
+    public static TamanhoVan definirTamanhoPorPeso(double peso){
+        if (peso <= 2000) return PEQUENO;
+        else if (peso <= 3500) return MEDIO;
+        else return GRANDE;
+    }
 }

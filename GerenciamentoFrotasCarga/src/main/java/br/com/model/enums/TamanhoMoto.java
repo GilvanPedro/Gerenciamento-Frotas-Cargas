@@ -14,4 +14,10 @@ public enum TamanhoMoto {
     public double getCoeficienteCarga() {
         return coeficienteCarga;
     }
+
+    public static TamanhoMoto definirTamanhoPorPeso(double peso){
+        if (peso <= 150) return PEQUENO;
+        else if (peso <= 300) return MEDIO;
+        else return GRANDE;
+    }
 }
