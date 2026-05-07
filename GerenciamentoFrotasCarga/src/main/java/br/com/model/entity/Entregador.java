@@ -4,12 +4,14 @@ public class Entregador extends Funcionario{
     private boolean emTreinamento;
     private boolean disponivel;
     private int quantidadeEntregasNoMes;
+    private double bonusSalario;
 
     public Entregador(int id, String nome, String cpf, String email, String telefone, double salario, boolean emTreinamento, boolean disponivel, int quantidadeEntregasNoMes) {
         super(id, nome, cpf, email, telefone, salario);
         this.emTreinamento = emTreinamento;
         this.disponivel = disponivel;
         this.quantidadeEntregasNoMes = quantidadeEntregasNoMes;
+        this.bonusSalario = 0;
     }
 
     public boolean isEmTreinamento() {
@@ -34,6 +36,14 @@ public class Entregador extends Funcionario{
 
     public void setQuantidadeEntregasNoMes(int quantidadeEntregasMes) {
         this.quantidadeEntregasNoMes = quantidadeEntregasMes;
+    }
+
+    public double getBonusSalario() {
+        return bonusSalario;
+    }
+
+    public void setBonusSalario(double bonusSalario) {
+        this.bonusSalario = bonusSalario;
     }
 
     @Override
