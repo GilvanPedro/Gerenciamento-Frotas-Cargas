@@ -15,39 +15,20 @@ public class ValidacaoPlaca {
         ABC-1D23
     */
 
-    // Carro
-    public static boolean validarPlacaCarro(String placa) {
+    // Validação das Placas
+    public static boolean validarPlaca(String placa) {
+        if (placa == null || placa.isBlank()) {
+            return false;
+        }
 
-        placa = placa.toUpperCase().replace("-", "");
+        // Remove traços e deixa tudo maiúsculo
+        placa = placa.toUpperCase().replace("-", "").trim();
 
-        return placa.matches("^[A-Z]{3}[0-9]{4}$") || // antigo
-                placa.matches("^[A-Z]{3}[0-9][A-Z][0-9]{2}$"); // mercosul
-    }
+        // Modelo antigo
+        boolean modeloAntigo = placa.matches("^[A-Z]{3}[0-9]{4}$");
+        // Modelo Mercosul
+        boolean modeloMercosul = placa.matches("^[A-Z]{3}[0-9][A-Z][0-9]{2}$");
 
-    // Moto
-    public static boolean validarPlacaMoto(String placa) {
-
-        placa = placa.toUpperCase().replace("-", "");
-
-        return placa.matches("^[A-Z]{3}[0-9]{4}$") ||
-                placa.matches("^[A-Z]{3}[0-9][A-Z][0-9]{2}$");
-    }
-
-    // Van
-    public static boolean validarPlacaVan(String placa) {
-
-        placa = placa.toUpperCase().replace("-", "");
-
-        return placa.matches("^[A-Z]{3}[0-9]{4}$") ||
-                placa.matches("^[A-Z]{3}[0-9][A-Z][0-9]{2}$");
-    }
-
-    // Caminhão
-    public static boolean validarPlacaCaminhao(String placa) {
-
-        placa = placa.toUpperCase().replace("-", "");
-
-        return placa.matches("^[A-Z]{3}[0-9]{4}$") ||
-                placa.matches("^[A-Z]{3}[0-9][A-Z][0-9]{2}$");
+        return modeloAntigo || modeloMercosul;
     }
 }
