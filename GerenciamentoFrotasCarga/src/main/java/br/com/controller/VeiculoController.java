@@ -85,6 +85,7 @@ public class VeiculoController {
     }
 
 
+    // Vai verificar algumas informações bases
     public boolean verificacaoNula(String marca, String modelo, String placa, double combustivelMaximo, double kmPorLitro){
         if (
                 marca == null || marca.isBlank() ||
