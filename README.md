@@ -1,124 +1,62 @@
 # Sistema de Gerenciamento de Frotas de Cargas
 
-## Sobre o Projeto
+## Descrição do Projeto
 
-Este projeto é uma solução robusta para o controle operacional e financeiro de frotas de transporte. Desenvolvido em Java, o sistema integra regras de domínio complexas para gerenciar veículos, motoristas e simular operações logísticas com foco em rentabilidade.
+Este software é uma solução estruturada para a gestão operacional e financeira de frotas de transporte de carga. Desenvolvido em Java, o sistema integra regras de domínio complexas para administrar veículos e motoristas, permitindo a simulação de operações logísticas com foco em rentabilidade e controle técnico.
 
-O software visa facilitar o dia a dia de empresas de logística, permitindo desde o cadastro técnico de veículos, com cálculos automáticos de coeficientes de carga, até a simulação detalhada de viagens, prevendo consumo de combustível, gastos operacionais e lucro líquido.
+A aplicação automatiza processos críticos como o cálculo de coeficientes de carga por categoria de veículo e a simulação detalhada de viagens, permitindo prever o consumo de combustível, gastos operacionais e a margem de lucro líquido.
 
 ---
 
-# Principais Funcionalidades
+## Funcionalidades Principais
 
-## Gestão de Frota (CRUD)
+### Gestão de Frota e Veículos
+O sistema oferece controle completo sobre diferentes categorias de veículos (Motos, Carros, Vans e Caminhões), gerenciando:
+* Status operacional do veículo.
+* Especificações técnicas de combustível e capacidade.
+* Cálculos automáticos de capacidade técnica baseados na categoria.
 
-Controle completo de:
+### Gestão de Condutores
+* Diferenciação hierárquica entre motoristas ativos e condutores em período de treinamento.
+* Sistema de folha de pagamento dinâmica que aplica bônus de produtividade e regras de remuneração específicas para trainees.
 
-- Motos
-- Carros
-- Vans
-- Caminhões
+### Simulador Logístico
+Módulo dedicado à validação de viabilidade de rotas:
+* Verificação de conformidade de carga máxima e autonomia de combustível.
+* Projeção de custos e análise financeira de lucro antes do início da operação.
 
-Incluindo:
+### Controle Financeiro e Indicadores
+* Registro centralizado de despesas: manutenção, combustível, impostos (IPVA) e multas.
+* Módulo de análise de desempenho com ranking de quilometragem e performance por unidade.
 
-- Status de atividade
-- Tipos de combustível
-- Informações técnicas dos veículos
+---
 
-## Controle de Motoristas
+## Regras de Negócio e Algoritmos
 
-Gestão de condutores com diferenciação entre:
+* **Coeficiente de Carga (K):** Implementação de cálculos específicos para determinar a carga útil máxima suportada por cada modal.
+* **Validação de Segurança:** Bloqueio de simulações em cenários de excesso de peso ou combustível insuficiente para o trajeto.
+* **Cálculos Financeiros:**
+    * Gastos Operacionais (G): Baseados na distância, peso e consumo médio.
+    * Lucro Líquido (L): Resultado da receita bruta subtraída de todos os custos variáveis e fixos.
+* **Integridade de Dados:** Validação rigorosa de identificadores únicos e placas no padrão Mercosul.
 
-- Motoristas ativos
-- Motoristas em treinamento
+---
 
-## Simulador de Transporte
+## Especificações Técnicas
 
-Módulo responsável por:
+* **Linguagem:** Java
+* **Interface:** Java Swing (Interface gráfica intuitiva com tempo de resposta otimizado)
+* **Arquitetura:** Orientação a Objetos com aplicação de Herança, Polimorfismo e Encapsulamento.
+* **Persistência:** Integração com Banco de Dados Relacional (SQL).
 
-- Validar carga máxima suportada
-- Verificar combustível disponível
-- Calcular consumo automaticamente
-- Avaliar viabilidade financeira da rota
+---
 
-## Cálculo Automatizado de Salários
+## Instruções de Instalação e Execução
 
-Folha de pagamento dinâmica considerando:
+1. Certifique-se de possuir o Java Development Kit (JDK) instalado.
+2. Configure a base de dados SQL conforme as especificações do sistema.
+3. Execute a classe principal para iniciar a aplicação via Java Swing.
 
-- Bônus por produtividade
-- Regras específicas para trainees
-
-## Monitoramento de Gastos
-
-Registro e visualização de despesas relacionadas a:
-
-- Manutenção
-- Combustível
-- IPVA
-- Multas
-
-## Painel de Visualização
-
-Funcionalidades disponíveis:
-
-- Ranking de quilometragem
-- Detalhamento de performance por veículo
-
-# Regras de Negócio Implementadas
-
-## Coeficiente de Carga (K)
-
-Cálculos específicos para determinar a carga máxima suportada por categoria de veículo.
-
-## Validação de Segurança
-
-O sistema bloqueia simulações em casos de:
-
-- Excesso de peso
-- Combustível insuficiente
-
-## Fórmulas Financeiras
-
-Algoritmos responsáveis pelo cálculo de:
-
-- Gastos operacionais (G)
-- Lucro líquido (L)
-
-Baseados em:
-
-- Distância percorrida
-- Peso da carga
-- Consumo médio do veículo
-
-## Integridade de Dados
-
-Validações implementadas:
-
-- Placas únicas no padrão brasileiro
-- IDs exclusivos
-
-# Tecnologias Utilizadas
-
-## Linguagem
-
-- Java
-
-## Interface Gráfica
-
-- Java Swing
-
-## Arquitetura
-
-- Orientação a Objetos
-    - Herança
-    - Polimorfismo
-    - Encapsulamento
-
-## Persistência
-
-- Banco de Dados Relacional
-
-## Padrão de Interface
-
-- Interface intuitiva
-- Tempo de resposta inferior a 2 segundos
+---
+**Autor:** Gilvan Pedro
+Estudante de Engenharia de Software – SENAI Goiás
