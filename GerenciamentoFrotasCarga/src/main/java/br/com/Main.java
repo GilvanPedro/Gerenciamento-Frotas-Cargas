@@ -42,7 +42,17 @@ public class Main {
                 TipoVeiculo.MOTO
         );
 
+        veiculoController.adicionarVeiculo(
+                "Corola",
+                "CG 160",
+                "Xtr9K78",
+                true,
+                55.0,
+                520.0,
+                25.0,
+                TipoVeiculo.CARRO
+        );
 
-        veiculoController.mostrarVeiculo();
+        System.out.println(veiculoController.mostrarVeiculos());
     }
 }

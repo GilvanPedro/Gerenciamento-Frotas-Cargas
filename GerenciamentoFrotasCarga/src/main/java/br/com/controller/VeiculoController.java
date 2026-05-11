@@ -4,8 +4,12 @@ import br.com.model.entity.*;
 import br.com.model.enums.TipoVeiculo;
 import br.com.util.ValidacaoPlaca;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class VeiculoController {
     ValidacaoPlaca validacaoPlaca = new ValidacaoPlaca();
+    private List<Veiculo> veiculos = new ArrayList<>();
     Veiculo novoVeiculo;
 
     // Adicionar Veiculo
@@ -80,11 +84,13 @@ public class VeiculoController {
                 return "Tipo de veículo inválido";
         }
 
+        veiculos.add(novoVeiculo);
         return "Veículo cadastrado com sucesso";
     }
 
-    public void mostrarVeiculo(){
-        System.out.println(novoVeiculo);
+    // Retornar a lista dos veículos
+    public List<Veiculo> mostrarVeiculos(){
+        return veiculos;
     }
 
     // Vai verificar algumas informações bases
