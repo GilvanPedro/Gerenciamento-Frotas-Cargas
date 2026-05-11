@@ -24,6 +24,18 @@ public class Veiculo {
         this.veiculoAutomatico = veiculoAutomatico;
     }
 
+    // Construtor padrão sem o id para gerar o veiculo inicial, posteriormente ele será adicionado no banco de dados, e pegará o id automático dele de lá
+    public Veiculo(String marca, String modelo, String placa, boolean veiculoAutomatico) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.placa = placa;
+        this.ativo = true;
+        this.combustivelAtual = 0;
+        this.quilometragem = 0;
+        this.veiculoAutomatico = veiculoAutomatico;
+        this.ultimaManutenção = LocalDate.now();
+    }
+
     public int getId() {
         return id;
     }

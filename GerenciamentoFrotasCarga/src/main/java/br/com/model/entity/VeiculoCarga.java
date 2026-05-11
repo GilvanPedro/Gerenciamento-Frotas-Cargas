@@ -17,6 +17,18 @@ public abstract class VeiculoCarga extends Veiculo{
         setCombustivelAtual(combustivelMaximo);
     }
 
+    // Construtor padrão sem o id para gerar o VeiculoCarga inicial, posteriormente, ele será adicionado no banco de dados, e pegará o id automático dele de lá
+    public VeiculoCarga(String marca, String modelo, String placa, boolean veiculoAutomatico, double combustivelMaximo, double peso, double quilometroPorLitro) {
+
+        super(marca, modelo, placa, veiculoAutomatico);
+
+        this.combustivelMaximo = combustivelMaximo;
+        this.peso = peso;
+        this.quilometroPorLitro = quilometroPorLitro;
+
+        setCombustivelAtual(combustivelMaximo);
+    }
+
     public double getCombustivelMaximo() {
         return combustivelMaximo;
     }

@@ -16,7 +16,7 @@ public class ValidacaoPlaca {
     */
 
     // Validação das Placas
-    public static boolean validarPlaca(String placa) {
+    public boolean validarPlaca(String placa) {
         if (placa == null || placa.isBlank()) {
             return false;
         }
