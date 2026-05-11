@@ -25,16 +25,12 @@ Incluindo:
 - Tipos de combustível
 - Informações técnicas dos veículos
 
----
-
 ## Controle de Motoristas
 
 Gestão de condutores com diferenciação entre:
 
 - Motoristas ativos
 - Motoristas em treinamento
-
----
 
 ## Simulador de Transporte
 
@@ -45,16 +41,12 @@ Módulo responsável por:
 - Calcular consumo automaticamente
 - Avaliar viabilidade financeira da rota
 
----
-
 ## Cálculo Automatizado de Salários
 
 Folha de pagamento dinâmica considerando:
 
 - Bônus por produtividade
 - Regras específicas para trainees
-
----
 
 ## Monitoramento de Gastos
 
@@ -65,8 +57,6 @@ Registro e visualização de despesas relacionadas a:
 - IPVA
 - Multas
 
----
-
 ## Painel de Visualização
 
 Funcionalidades disponíveis:
@@ -74,15 +64,11 @@ Funcionalidades disponíveis:
 - Ranking de quilometragem
 - Detalhamento de performance por veículo
 
----
-
 # Regras de Negócio Implementadas
 
 ## Coeficiente de Carga (K)
 
 Cálculos específicos para determinar a carga máxima suportada por categoria de veículo.
-
----
 
 ## Validação de Segurança
 
@@ -90,8 +76,6 @@ O sistema bloqueia simulações em casos de:
 
 - Excesso de peso
 - Combustível insuficiente
-
----
 
 ## Fórmulas Financeiras
 
@@ -106,16 +90,12 @@ Baseados em:
 - Peso da carga
 - Consumo médio do veículo
 
----
-
 ## Integridade de Dados
 
 Validações implementadas:
 
 - Placas únicas no padrão brasileiro
 - IDs exclusivos
-
----
 
 # Tecnologias Utilizadas
 
