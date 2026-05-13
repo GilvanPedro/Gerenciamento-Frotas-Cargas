@@ -20,6 +20,7 @@ public class VeiculoController {
             return "Verifique se as informações estão preenchidas corretamente";
         }
 
+        // Criando o veículo levando em conta qual ele é
         switch (tipoVeiculo){
             case MOTO:
                 novoVeiculo = new Moto(

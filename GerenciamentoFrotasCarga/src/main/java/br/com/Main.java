@@ -31,6 +31,7 @@ public class Main {
 
         VeiculoController veiculoController = new VeiculoController();
 
+        System.out.println("\nAdicionando o Veiculo");
         veiculoController.adicionarVeiculo(
                 "Honda",
                 "CG 160",
@@ -44,6 +45,7 @@ public class Main {
 
         System.out.println(veiculoController.mostrarVeiculos());
 
+        System.out.println("\nEditando o Veiculo");
         veiculoController.editarVeiculo(
                 0,
                 "Ronda",
@@ -56,5 +58,11 @@ public class Main {
         );
 
         System.out.println(veiculoController.mostrarVeiculos());
+
+        veiculoController.excluirVeiculo(0);
+
+        System.out.println("\nExcluindo o Veiculo");
+        System.out.println(veiculoController.mostrarVeiculos());
+
     }
 }
