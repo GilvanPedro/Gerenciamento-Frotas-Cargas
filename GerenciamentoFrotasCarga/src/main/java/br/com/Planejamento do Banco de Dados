@@ -1,0 +1,64 @@
+O que ele vei armazenar?
+-Veiculos
+-Tipos de Veiculos
+-Funcionarios
+-Tipos de funcionarios
+-Movimentaçoes
+-Tipos de movimentaçao
+
+VEICULO
+id
+marca
+modelo
+placa (única)
+tipoVeiculo (CARRO, MOTO, CAMINHAO, VAN)
+ativo
+combustivelAtual
+combustivelMaximo
+quilometragem
+veiculoAutomatico
+ultimaManutencao
+quilometroPorLitro
+
+VEICULO_DETALHE
+id
+veiculo (referência para VEICULO)
+peso
+coeficienteCarga
+tamanho (PEQUENO, MEDIO, GRANDE)
+
+FUNCIONARIO
+id
+nome
+cpf (único)
+email
+telefone
+salario
+ativo
+dataAdmissao
+tipoFuncionario (ENTREGADOR, ADMIN)
+
+ENTREGADOR (herança de FUNCIONARIO)
+id
+funcionario (referência para FUNCIONARIO)
+emTreinamento
+disponivel
+quantidadeEntregasNoMes
+bonusSalario
+
+MOVIMENTACAO
+id
+descricao
+valor
+tipo (RECEITA, DESPESA)
+veiculo (referência para VEICULO)
+dataMovimentacao
+
+DESPESA (herança de MOVIMENTACAO)
+id
+movimentacao (referência para MOVIMENTACAO)
+tipoGasto (COMBUSTIVEL, MANUTENCAO, MULTA, OUTROS)
+
+RECEITA (herança de MOVIMENTACAO)
+id
+movimentacao (referência para MOVIMENTACAO)

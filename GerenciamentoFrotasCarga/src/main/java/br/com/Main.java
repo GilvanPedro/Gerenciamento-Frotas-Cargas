@@ -39,18 +39,20 @@ public class Main {
                 15.0,
                 120.0,
                 35.0,
-                TipoVeiculo.MOTO
+                TipoVeiculo.CARRO
         );
 
-        veiculoController.adicionarVeiculo(
-                "Corola",
-                "CG 160",
+        System.out.println(veiculoController.mostrarVeiculos());
+
+        veiculoController.editarVeiculo(
+                0,
+                "Ronda",
+                "Civic",
                 "Xtr9K78",
                 true,
                 55.0,
                 520.0,
-                25.0,
-                TipoVeiculo.CARRO
+                25.0
         );
 
         System.out.println(veiculoController.mostrarVeiculos());

@@ -103,6 +103,18 @@ public class VeiculoController {
         return "Algo deu errado, verifique novamente as informaões e tente de novo";
     }
 
+    // Excluir um Veiculo
+    public String excluirVeiculo(int id){
+        for(Veiculo v : veiculos){
+            if(v.getId() == id){
+                veiculos.remove(v);
+
+                return "Veiculo removido com sucesso";
+            }
+        }
+        return "Veiculo não encontrado";
+    }
+
     // Retornar a lista dos veículos (temporário)
     public List<Veiculo> mostrarVeiculos(){
         return veiculos;
@@ -110,6 +122,7 @@ public class VeiculoController {
 
     // Vai verificar algumas informações bases
     public boolean verificacoes(String marca, String modelo, String placa, double combustivelMaximo, double kmPorLitro, double peso){
+        // Verifica se tem informação nula ou vazia
         if (
                 marca == null || marca.isBlank() ||
                 modelo == null || modelo.isBlank() ||
@@ -118,12 +131,14 @@ public class VeiculoController {
                 kmPorLitro <= 0
         ) return false;
 
+        // Verifica o km por litro
         if(kmPorLitro<=0) return false;
 
-        if(peso<100) return false;
+        // Verifica se o peso é maior que 0
+        if(peso<=0) return false;
 
+        // Verifica a placa
         if(!validacaoPlaca.validarPlaca(placa))return false;
-
 
         return true;
     }
