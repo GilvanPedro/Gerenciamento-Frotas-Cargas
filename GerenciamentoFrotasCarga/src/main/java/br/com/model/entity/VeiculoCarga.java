@@ -45,6 +45,18 @@ public abstract class VeiculoCarga extends Veiculo{
         return quilometroPorLitro;
     }
 
+    public void setCombustivelMaximo(double combustivelMaximo) {
+        this.combustivelMaximo = combustivelMaximo;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public void setQuilometroPorLitro(double quilometroPorLitro) {
+        this.quilometroPorLitro = quilometroPorLitro;
+    }
+
     @Override
     public String toString() {
         return "\nID: " + getId() +

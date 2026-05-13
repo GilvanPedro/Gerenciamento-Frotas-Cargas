@@ -15,24 +15,9 @@ public class VeiculoController {
     // Adicionar Veiculo
     public String adicionarVeiculo(String marca, String modelo, String placa, boolean automatico, double combustivelMaximo, double peso, double kmPorLitro, TipoVeiculo tipoVeiculo){
 
-        // Verificação da placa
-        if(!validacaoPlaca.validarPlaca(placa)){
-            return "Informe uma placa válida";
-        }
-
-        // Verificação de se as informações estão nulas
-        if(!verificacaoNula(marca, modelo, placa, combustivelMaximo, kmPorLitro)){
+        // Verificação das informações principais
+        if(!verificacoes(marca, modelo, placa, combustivelMaximo, kmPorLitro, peso)){
             return "Verifique se as informações estão preenchidas corretamente";
-        }
-
-        // Verifica se o peso é válido
-        if(peso<100){
-            return "Adicione um peso válido";
-        }
-
-        // Valida se o Km/l é maior do que 0
-        if(kmPorLitro<=0){
-            return "Adicione uma quantidade de quilometros por litro válida";
         }
 
         switch (tipoVeiculo){
@@ -88,13 +73,43 @@ public class VeiculoController {
         return "Veículo cadastrado com sucesso";
     }
 
-    // Retornar a lista dos veículos
+    // Edição de um veículo
+    public String editarVeiculo(int id, String marca, String modelo, String placa, boolean automatico, double kmPorLitro, double combustivelMaximo, double peso){
+
+        // Faz as principais verificações
+        if(!verificacoes(marca, modelo, placa, combustivelMaximo, kmPorLitro, peso)){
+            return "Verifique se as informações estão preenchidas corretamente";
+        }
+
+        // Edição do veículo
+        for(Veiculo v: veiculos){
+            if(id == v.getId()){
+                v.setMarca(marca);
+                v.setModelo(modelo);
+                v.setPlaca(placa);
+                v.setVeiculoAutomatico(automatico);
+
+                if (v instanceof VeiculoCarga) {
+                    VeiculoCarga carga = (VeiculoCarga) v;
+                    carga.setQuilometroPorLitro(kmPorLitro);
+                    carga.setCombustivelMaximo(combustivelMaximo);
+                    carga.setPeso(peso);
+                }
+
+                return "veiculo editado com sucesso";
+            }
+        }
+
+        return "Algo deu errado, verifique novamente as informaões e tente de novo";
+    }
+
+    // Retornar a lista dos veículos (temporário)
     public List<Veiculo> mostrarVeiculos(){
         return veiculos;
     }
 
     // Vai verificar algumas informações bases
-    public boolean verificacaoNula(String marca, String modelo, String placa, double combustivelMaximo, double kmPorLitro){
+    public boolean verificacoes(String marca, String modelo, String placa, double combustivelMaximo, double kmPorLitro, double peso){
         if (
                 marca == null || marca.isBlank() ||
                 modelo == null || modelo.isBlank() ||
@@ -102,6 +117,13 @@ public class VeiculoController {
                 combustivelMaximo <= 0 ||
                 kmPorLitro <= 0
         ) return false;
+
+        if(kmPorLitro<=0) return false;
+
+        if(peso<100) return false;
+
+        if(!validacaoPlaca.validarPlaca(placa))return false;
+
 
         return true;
     }
