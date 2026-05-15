@@ -20,6 +20,15 @@ public class Funcionario {
         this.telefone = telefone;
         this.salario = salario;
         this.ativo = true;
+    }
+
+    public Funcionario(String nome, String cpf, String email, String telefone, double salario) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.telefone = telefone;
+        this.salario = salario;
+        this.ativo = true;
         this.dataAdmissao = LocalDate.now();
     }
 

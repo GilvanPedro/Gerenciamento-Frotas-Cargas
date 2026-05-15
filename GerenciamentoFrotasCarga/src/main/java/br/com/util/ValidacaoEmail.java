@@ -1,7 +1,7 @@
 package br.com.util;
 
 public class ValidacaoEmail {
-    public static boolean validarEmail(String email){
+    public boolean validarEmail(String email){
         if(email == null) return false;
 
         String regex = "^[A-Za-z0-9+_.-]+@[A-Za-z]{2,}$";

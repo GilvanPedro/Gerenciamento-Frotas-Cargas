@@ -6,11 +6,19 @@ public class Entregador extends Funcionario{
     private int quantidadeEntregasNoMes;
     private double bonusSalario;
 
-    public Entregador(int id, String nome, String cpf, String email, String telefone, double salario, boolean emTreinamento, boolean disponivel, int quantidadeEntregasNoMes) {
+    public Entregador(int id, String nome, String cpf, String email, String telefone, double salario) {
         super(id, nome, cpf, email, telefone, salario);
-        this.emTreinamento = emTreinamento;
-        this.disponivel = disponivel;
-        this.quantidadeEntregasNoMes = quantidadeEntregasNoMes;
+        this.emTreinamento = true;
+        this.disponivel = true;
+        this.quantidadeEntregasNoMes = 0;
+        this.bonusSalario = 0;
+    }
+
+    public Entregador(String nome, String cpf, String email, String telefone, double salario) {
+        super(nome, cpf, email, telefone, salario);
+        this.emTreinamento = true;
+        this.disponivel = true;
+        this.quantidadeEntregasNoMes = 0;
         this.bonusSalario = 0;
     }
 
