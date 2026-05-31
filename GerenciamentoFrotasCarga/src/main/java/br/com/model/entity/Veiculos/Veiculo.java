@@ -1,4 +1,4 @@
-package br.com.model.entity;
+package br.com.model.entity.Veiculos;
 
 import java.time.LocalDate;
 

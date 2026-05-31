@@ -1,8 +1,8 @@
-package br.com.model.entity;
+package br.com.model.entity.Veiculos;
 
 import java.time.LocalDate;
 
-public class VeiculoCarga extends Veiculo{
+public class VeiculoCarga extends Veiculo {
     private double combustivelMaximo;
     private double peso;
     private double quilometroPorLitro;

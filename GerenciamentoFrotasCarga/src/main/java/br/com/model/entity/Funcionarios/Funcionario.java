@@ -1,4 +1,4 @@
-package br.com.model.entity;
+package br.com.model.entity.Funcionarios;
 
 import java.time.LocalDate;
 
