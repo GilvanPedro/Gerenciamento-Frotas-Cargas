@@ -23,4 +23,8 @@ public enum TamanhoCaminhao {
             return TamanhoCaminhao.EXTRAGRANDE;
         }
     }
+
+    public double getCoeficienteCarga() {
+        return coeficienteCarga;
+    }
 }

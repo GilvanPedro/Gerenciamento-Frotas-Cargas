@@ -20,4 +20,8 @@ public enum TamanhoVan {
             return TamanhoVan.GRANDE;
         }
     }
+
+    public double getCoeficienteCarga() {
+        return coeficienteCarga;
+    }
 }
