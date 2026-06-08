@@ -1,3 +1,5 @@
+# PROJETO PARADO POR CONTA DO PROJETO INTEGRADOR DA FACULDADE
+
 # Sistema de Gerenciamento de Frotas de Cargas
 
 ## Descrição do Projeto
